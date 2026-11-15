@@ -9,6 +9,10 @@ Its stations sell everything: every hull, weapon, fighter wing, AI core, special
 It is a cheat mod. Prices are steep, but nothing is out of reach.
 Needs LazyLib, LunaLib and MagicLib. Start a new game after installing it.
 [/b][/center]
+[spoiler=Screenshots]
+[center][img]https://github.com/andrzejsokolowski/starsector-the-everything-shop/blob/main/screenshots/01-the-treasury.webp?raw=true[/img]
+[img]https://github.com/andrzejsokolowski/starsector-the-everything-shop/blob/main/screenshots/02-ballistic-arsenal.webp?raw=true[/img][/center]
+[/spoiler]
 
 [hr][center][size=12pt][b]The stations[/b][/size][/center][hr]
 [list]
