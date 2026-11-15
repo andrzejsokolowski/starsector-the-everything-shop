@@ -1,7 +1,7 @@
 """Compile the jar, stage the release folder and zip it folder-at-root for the mod manager.
 
 Run from anywhere: python build.py
-Needs javac/jar (JDK 17+) on PATH and the game plus the library mods under D:/Games/StarSector.
+Needs javac/jar (JDK 17+) on PATH and the game plus the library mods under D:/Games/StarSector0985.
 Writes jars/TheEverythingShop.jar, the staging folder TheEverythingShop/ and
 TheEverythingShop-<version>.zip in the mod root.
 """
@@ -14,7 +14,7 @@ import sys
 import zipfile
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-GAME = "D:/Games/StarSector"
+GAME = "D:/Games/StarSector0985"
 MODS = GAME + "/mods"
 STAGE_NAME = "TheEverythingShop"
 STAGE = os.path.join(ROOT, STAGE_NAME)
