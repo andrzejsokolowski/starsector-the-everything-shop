@@ -28,7 +28,7 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
 
 - id `the_everything_shop`, Java package `theeverythingshop`, ids prefixed `tes_`. Build with
   `python build.py`: it compiles `jars/TheEverythingShop.jar` with `javac --release 17` against the
-  game and the library mods in `D:\Games\StarSector\mods` (MagicLib, LazyLib, LunaLib, Nexerelin,
+  game and the library mods in `D:\Games\StarSector0985\mods` (MagicLib, LazyLib, LunaLib, Nexerelin,
   and Exotica Technologies as compile-only), then stages `TheEverythingShop/` and writes
   `TheEverythingShop-<version>.zip` in the root. `--jar-only` stops after the jar.
 - Release metadata: `mod_info.json`, `the_everything_shop.version` (registered in
