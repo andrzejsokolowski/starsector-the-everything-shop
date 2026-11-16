@@ -1,4 +1,4 @@
-Version 1.2.0 (2026-11-16)
+Version 1.2.1 (2026-11-16)
 - The Treasury now sits in the middle of the nebula, next to the jump point (existing saves too)
 - New station with Exiled Sector: the RogueLike Shop, with Consumables, Star Charts, Hull Items, Nanoswarms, Engrams and Ciphers shops. Exiled Sector items left Specials and Blueprints
 - Exiled Sector hull items and subroutines work now (they showed up as "Unrecognised hull item"); they are rolled by Exiled Sector and get new rolls every month

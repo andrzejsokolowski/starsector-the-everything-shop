@@ -39,7 +39,8 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
   runs on every load and brings older saves up to date: The Treasury (`tes_treasury`) circles the jump
   point in the middle, the RogueLike Shop (`tes_roguelike`) is built when Exiled Sector is on, and no
   station keeps an open or black market. Other changes to the nebula need a new save.
-- The AI Cores shop (`tes_ai_cores`, `ExtraStoreAICores`) is a Treasury tab since 1.2.0 (it was on [REDACTED]).
+- The AI Cores shop (`tes_ai_cores`, `ExtraStoreAICores`) is a Treasury tab since 1.2.1 (it was on [REDACTED]). The tag v1.2.0
+  points at the 1.1.0 commit by mistake and has no release; 1.2.1 is the first release with these changes.
 - Chicken (from Chicken's Tech Shop) was removed in 1.0.0; nothing of that mod is left. Treasury
   prices follow the player's standing with the Independents (`TreasuryShopBase.getTariff`).
 - The original stores (AI, Elite, General Trade) and the nebula generator started as Massacre's
