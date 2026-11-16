@@ -33,14 +33,14 @@ tes_fighter_fighter,Fighter Wings,,"Every fighter-role wing in the sector, sold 
 tes_fighter_interceptor,Interceptor Wings,,"Every interceptor-role wing in the sector, sold at a premium.",theeverythingshop.world.submarkets.ExtraStoreFighterInterceptor,graphics/factions/extra_market_faction_of_the_month.png,412
 tes_fighter_assault,Assault Wings,,"Every assault-role fighter wing in the sector, sold at a premium.",theeverythingshop.world.submarkets.ExtraStoreFighterAssault,graphics/factions/extra_market_faction_of_the_month.png,413
 tes_fighter_support,Support Wings,,"Every support-role fighter wing in the sector, sold at a premium.",theeverythingshop.world.submarkets.ExtraStoreFighterSupport,graphics/factions/extra_market_faction_of_the_month.png,414
-tes_treasury_specials,Specials,,"Every special item you can use, 999 of each.",theeverythingshop.world.submarkets.TreasurySpecials,graphics/factions/tes_treasury_icon.png,300
-tes_treasury_blueprints,Blueprints,,"One of each blueprint you don't know yet, plus blueprint items you use up.",theeverythingshop.world.submarkets.TreasuryBlueprints,graphics/factions/tes_treasury_icon.png,301
-tes_treasury_modspecs,Hullmod Specs,,One spec for each hull mod you don't know yet.,theeverythingshop.world.submarkets.TreasuryModspecs,graphics/factions/tes_treasury_icon.png,302
-tes_treasury_exotics,Exotica Exotics,,"Every Exotica exotic chip in every form, 999 of each.",theeverythingshop.world.submarkets.TreasuryExotics,graphics/factions/tes_treasury_icon.png,303
-tes_treasury_upgrades,Exotica Upgrades,,"Every Exotica upgrade chip at every level, 999 of each.",theeverythingshop.world.submarkets.TreasuryUpgrades,graphics/factions/tes_treasury_icon.png,304
-tes_rl_consumables,Consumables,,"Every Exiled Sector schematic, terminus, survey, order and other consumable, 999 of each.",theeverythingshop.world.submarkets.RoguelikeConsumables,graphics/factions/tes_treasury_icon.png,310
-tes_rl_star_charts,Star Charts,,"Exiled Sector star charts of every tier, 999 of each.",theeverythingshop.world.submarkets.RoguelikeStarCharts,graphics/factions/tes_treasury_icon.png,311
-tes_rl_hull_items,Hull Items,,"Every Exiled Sector hull item and subroutine, newly rolled every month, 999 of each.",theeverythingshop.world.submarkets.RoguelikeHullItems,graphics/factions/tes_treasury_icon.png,312
-tes_rl_nanoswarms,Nanoswarms,,"Every Exiled Sector nanoswarm, nanoseed and Nanite Feedstock, 999 of each.",theeverythingshop.world.submarkets.RoguelikeNanoswarms,graphics/factions/tes_treasury_icon.png,313
-tes_rl_engrams,Engrams,,"Every Exiled Sector engram, 999 of each.",theeverythingshop.world.submarkets.RoguelikeEngrams,graphics/factions/tes_treasury_icon.png,314
-tes_rl_ciphers,Ciphers,,"Every Exiled Sector cipher, 999 of each.",theeverythingshop.world.submarkets.RoguelikeCiphers,graphics/factions/tes_treasury_icon.png,315
+tes_treasury_specials,Specials,,"Every special item you can use, 999 of each.",theeverythingshop.world.submarkets.TreasurySpecials,graphics/factions/tes_shop_specials.png,300
+tes_treasury_blueprints,Blueprints,,"One of each blueprint you don't know yet, plus blueprint items you use up.",theeverythingshop.world.submarkets.TreasuryBlueprints,graphics/factions/tes_shop_blueprints.png,301
+tes_treasury_modspecs,Hullmod Specs,,One spec for each hull mod you don't know yet.,theeverythingshop.world.submarkets.TreasuryModspecs,graphics/factions/tes_shop_modspecs.png,302
+tes_treasury_exotics,Exotica Exotics,,"Every Exotica exotic chip in every form, 999 of each.",theeverythingshop.world.submarkets.TreasuryExotics,graphics/factions/tes_shop_exotics.png,303
+tes_treasury_upgrades,Exotica Upgrades,,"Every Exotica upgrade chip at every level, 999 of each.",theeverythingshop.world.submarkets.TreasuryUpgrades,graphics/factions/tes_shop_upgrades.png,304
+tes_rl_consumables,Consumables,,"Every Exiled Sector schematic, terminus, survey, order and other consumable, 999 of each.",theeverythingshop.world.submarkets.RoguelikeConsumables,graphics/factions/tes_shop_rl_consumables.png,310
+tes_rl_star_charts,Star Charts,,"Exiled Sector star charts of every tier, 999 of each.",theeverythingshop.world.submarkets.RoguelikeStarCharts,graphics/factions/tes_shop_rl_star_charts.png,311
+tes_rl_hull_items,Hull Items,,"Every Exiled Sector hull item and subroutine, newly rolled every month, 999 of each.",theeverythingshop.world.submarkets.RoguelikeHullItems,graphics/factions/tes_shop_rl_hull_items.png,312
+tes_rl_nanoswarms,Nanoswarms,,"Every Exiled Sector nanoswarm, nanoseed and Nanite Feedstock, 999 of each.",theeverythingshop.world.submarkets.RoguelikeNanoswarms,graphics/factions/tes_shop_rl_nanoswarms.png,313
+tes_rl_engrams,Engrams,,"Every Exiled Sector engram, 999 of each.",theeverythingshop.world.submarkets.RoguelikeEngrams,graphics/factions/tes_shop_rl_engrams.png,314
+tes_rl_ciphers,Ciphers,,"Every Exiled Sector cipher, 999 of each.",theeverythingshop.world.submarkets.RoguelikeCiphers,graphics/factions/tes_shop_rl_ciphers.png,315

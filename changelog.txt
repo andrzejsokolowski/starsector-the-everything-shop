@@ -1,3 +1,7 @@
+Version 1.2.2 (2026-11-16)
+- Exotica Exotics and Exotica Upgrades cost ten times as much
+- New pictures for the Treasury and RogueLike Shop shops
+
 Version 1.2.1 (2026-11-16)
 - The Treasury now sits in the middle of the nebula, next to the jump point (existing saves too)
 - New station with Exiled Sector: the RogueLike Shop, with Consumables, Star Charts, Hull Items, Nanoswarms, Engrams and Ciphers shops. Exiled Sector items left Specials and Blueprints

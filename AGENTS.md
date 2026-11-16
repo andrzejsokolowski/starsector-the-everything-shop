@@ -59,6 +59,9 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
 - Which special items are sold: `theeverythingshop.items.SpecialItemRules` (plain items),
   `DataItemStock` (items that need data), `data/config/the_everything_shop/excluded_items.csv`
   (never sold).
+- The shop tab pictures `graphics/factions/tes_shop_*.png` are drawn by `python tools/make_shop_icons.py`
+  (gold on navy, like the mod icons). No Chicken's shop art is left. Exotica shops cost ten times the
+  Treasury price (`TreasuryExotics.PRICE_MULT`).
 - Andrzej installs releases through his mod manager. Do not copy into the game folder.
 - In PowerShell, run any cleanup that uses `Remove-Item` as its own command, apart from commands
   naming `C:\Program...` paths (the sandbox blocks the combination).

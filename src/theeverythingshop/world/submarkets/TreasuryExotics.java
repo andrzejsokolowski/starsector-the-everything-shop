@@ -7,6 +7,7 @@ import theeverythingshop.compat.ExoticaCompat;
 /**
  * Exotics (Exotica Technologies only): every exotic chip in every form (normal, corrupted,
  * pure and the fork's guerilla). Exotics that install from an AI core get no chip.
+ * Exotica Upgrades extends this shop, so both cost ten times the Treasury price.
  */
 public class TreasuryExotics extends TreasuryShopBase {
 
@@ -24,6 +25,15 @@ public class TreasuryExotics extends TreasuryShopBase {
             log.warn("Skipping Exotica item " + id + " " + data, t);
             cargo.removeEmptyStacks();
         }
+    }
+
+    /** Exotica chips are worth little because the mod never sells them; here they cost ten times as much. */
+    public static final float PRICE_MULT = 10f;
+
+    // The buy price is the item's price times (1 + tariff), so this makes it ten times the Treasury price
+    @Override
+    public float getTariff() {
+        return (1f + super.getTariff()) * PRICE_MULT - 1f;
     }
 
     @Override
