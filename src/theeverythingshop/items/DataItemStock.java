@@ -71,7 +71,6 @@ public class DataItemStock {
         stock.run("Elysian Data Recorders", new Runnable() { public void run() { stock.zeaRecorders(); } });
         stock.run("Knowledge Constructs", new Runnable() { public void run() { stock.superconstructs(); } });
         stock.run("Vulpoids", new Runnable() { public void run() { stock.vulpoids(); } });
-        stock.run("Exiled Sector items", new Runnable() { public void run() { stock.exiledSector(); } });
         stock.run("Gene Splicers", new Runnable() { public void run() { stock.geneSplicers(); } });
         return stock.out;
     }
@@ -83,10 +82,16 @@ public class DataItemStock {
         return stock.out;
     }
 
-    /** Blueprint items that are used up (RAT industry blueprints, Exiled Sector schematics). */
+    /** Blueprint items that are used up (RAT industry blueprints). */
     public static List<String[]> consumableBlueprints(int qty) {
         final DataItemStock stock = new DataItemStock(qty);
         stock.run("RAT industry blueprints", new Runnable() { public void run() { stock.ratIndustries(); } });
+        return stock.out;
+    }
+
+    /** Exiled Sector schematics, for the RogueLike Shop's Consumables, {id, data, amount}. */
+    public static List<String[]> exiledSchematics(int qty) {
+        final DataItemStock stock = new DataItemStock(qty);
         stock.run("Exiled Sector schematics", new Runnable() { public void run() { stock.exiledSchematics(); } });
         return stock.out;
     }
@@ -247,28 +252,8 @@ public class DataItemStock {
         }
     }
 
-    // Exiled Sector: hull items and subroutines (one roll each) and star charts of every tier.
-    // Wormhole anchors stay out, like every other anchor.
-    private void exiledSector() {
-        if (hasItem("exiledSector_socketable")) {
-            for (String file : new String[] { "hull_items.csv", "subroutines.csv" }) {
-                JSONArray rows = csv("id", "data/config/exiledSector/" + file, "exiledSector");
-                for (int i = 0; i < rows.length(); i++) {
-                    JSONObject row = rows.optJSONObject(i);
-                    String id = row == null ? "" : row.optString("id", "").trim();
-                    if (!id.isEmpty() && !id.startsWith("#")) {
-                        add("exiledSector_socketable", id + "|" + random.nextLong());
-                    }
-                }
-            }
-        }
-        if (hasItem("exiledSector_star_chart")) {
-            for (int tier = 1; tier <= 15; tier++) {
-                add("exiledSector_star_chart",
-                        "{\"d\":\"star_chart\",\"s\":" + random.nextLong() + ",\"t\":" + tier + "}");
-            }
-        }
-    }
+    // Exiled Sector hull items, subroutines and star charts are rolled by Exiled Sector itself:
+    // see theeverythingshop.compat.ExiledSectorCompat. Wormhole anchors stay out, like every other anchor.
 
     // Exiled Sector schematics: the four refit schematic tiers and the three single schematics
     private void exiledSchematics() {

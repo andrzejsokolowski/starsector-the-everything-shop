@@ -22,7 +22,7 @@ tes_enable_fighter_fighter,,,,Fighter Wings,,Boolean,true,,,,Sells every fighter
 tes_enable_fighter_interceptor,,,,Interceptor Wings,,Boolean,true,,,,Sells every interceptor-role wing.,,,,,Fighter Store
 tes_enable_fighter_assault,,,,Assault Wings,,Boolean,true,,,,Sells every assault-role fighter wing.,,,,,Fighter Store
 tes_enable_fighter_support,,,,Support Wings,,Boolean,true,,,,Sells every support-role fighter wing.,,,,,Fighter Store
-tes_enable_ai_cores,,,,AI Cores Store,,Boolean,true,,,,Original store: AI cores.,,,,,Original Stores
+tes_enable_ai_cores,,,,AI Cores,,Boolean,true,,,,"The Treasury: every AI core from every installed mod.",,,,,Treasury
 tes_enable_ai_derelict,,,,Derelict AI Market,,Boolean,true,,,,Original store: Domain Explorarium drone ships.,,,,,Original Stores
 tes_enable_ai_remnant,,,,Remnant AI Market,,Boolean,true,,,,Original store: Remnant drone ships.,,,,,Original Stores
 tes_enable_ai_omega,,,,Transcendent Forge,,Boolean,true,,,,Original store: Omega tech.,,,,,Original Stores
@@ -37,5 +37,6 @@ tes_enable_player_market,,,,Building Your Shit,,Boolean,true,,,,Original store: 
 tes_enable_treasury_specials,,,,Specials,,Boolean,true,,,,"The Treasury: every special item you can use, 999 of each.",,,,,Treasury
 tes_enable_treasury_blueprints,,,,Blueprints,,Boolean,true,,,,"The Treasury: one of each blueprint and blueprint package you don't know yet, plus blueprint items you use up.",,,,,Treasury
 tes_enable_treasury_modspecs,,,,Hullmod Specs,,Boolean,true,,,,The Treasury: one spec for each hull mod you don't know yet.,,,,,Treasury
-tes_enable_treasury_exotics,,,,Exotics,,Boolean,true,,,,"The Treasury, with Exotica Technologies only: every exotic chip in every form.",,,,,Treasury
-tes_enable_treasury_upgrades,,,,Upgrades,,Boolean,true,,,,"The Treasury, with Exotica Technologies only: every upgrade chip at every level.",,,,,Treasury
+tes_enable_treasury_exotics,,,,Exotica Exotics,,Boolean,true,,,,"The Treasury, with Exotica Technologies only: every exotic chip in every form.",,,,,Treasury
+tes_enable_treasury_upgrades,,,,Exotica Upgrades,,Boolean,true,,,,"The Treasury, with Exotica Technologies only: every upgrade chip at every level.",,,,,Treasury
+tes_enable_roguelike_shop,,,,RogueLike Shop,,Boolean,true,,,,"With Exiled Sector only: a station selling its consumables, star charts, hull items, nanoswarms, engrams and ciphers, 999 of each.",,,,,Treasury

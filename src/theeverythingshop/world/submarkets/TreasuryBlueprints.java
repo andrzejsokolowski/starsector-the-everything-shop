@@ -25,8 +25,8 @@ import java.util.Set;
  * Blueprints: one of each blueprint the player doesn't know yet (rare ship, weapon and
  * fighter blueprints, blueprint packages that still teach something, Station Augment
  * blueprints and AoTD Citadel Schematics). What the player knows or bought here never comes
- * back. Blueprint items that are used up (RAT industry blueprints, Exiled Sector
- * schematics) are sold 999 at a time.
+ * back. Blueprint items that are used up (RAT industry blueprints) are sold 999 at a time.
+ * Exiled Sector schematics are in the RogueLike Shop.
  */
 public class TreasuryBlueprints extends TreasuryShopBase {
 

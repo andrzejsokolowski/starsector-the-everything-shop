@@ -1,5 +1,5 @@
 id,name,faction,desc,script,icon,order
-tes_ai_cores,AI Cores Store,,Highly illegal store (According to Hegemony and Luddites solely) which sells various 'Christmas Balls' possessing high level of artifical intelligence,theeverythingshop.world.submarkets.ExtraStoreAICores,graphics/factions/extra_market_ai_cores.png,202
+tes_ai_cores,AI Cores,,Every AI core from every installed mod.,theeverythingshop.world.submarkets.ExtraStoreAICores,graphics/factions/extra_market_ai_cores.png,202
 tes_ai_derelict,Derelict AI Market,,"This store sells Drone Ships of Domain Explorarium pattern, these piles of junk are much scattered over the sector and Scavengers bring these alot. Also sells weaponry used by them as well.",theeverythingshop.world.submarkets.ExtraStoreAiDerelict,graphics/factions/domain_explorarium.png,105
 tes_ai_remnant,Remnant AI Market,,"This store sells Drone Ships of Remnant pattern and their equipment, lying and decaying in some Tri-Tachyon stockpile from AI Wars era, since Hegemony sanctions forbid using these. Also sells weaponry used by them as well.",theeverythingshop.world.submarkets.ExtraStoreAiRemnant,graphics/factions/ai_remnant.png,110
 tes_ai_omega,Transcendent Forge,,"By reaching transcendant level of knowledge and skill, you have impressed the Omega, and they offered some of their tech to you as reward in respect",theeverythingshop.world.submarkets.ExtraStoreOmegaMarket,graphics/factions/extra_market_omega.png,175
@@ -36,5 +36,11 @@ tes_fighter_support,Support Wings,,"Every support-role fighter wing in the secto
 tes_treasury_specials,Specials,,"Every special item you can use, 999 of each.",theeverythingshop.world.submarkets.TreasurySpecials,graphics/factions/tes_treasury_icon.png,300
 tes_treasury_blueprints,Blueprints,,"One of each blueprint you don't know yet, plus blueprint items you use up.",theeverythingshop.world.submarkets.TreasuryBlueprints,graphics/factions/tes_treasury_icon.png,301
 tes_treasury_modspecs,Hullmod Specs,,One spec for each hull mod you don't know yet.,theeverythingshop.world.submarkets.TreasuryModspecs,graphics/factions/tes_treasury_icon.png,302
-tes_treasury_exotics,Exotics,,"Every Exotica exotic chip in every form, 999 of each.",theeverythingshop.world.submarkets.TreasuryExotics,graphics/factions/tes_treasury_icon.png,303
-tes_treasury_upgrades,Upgrades,,"Every Exotica upgrade chip at every level, 999 of each.",theeverythingshop.world.submarkets.TreasuryUpgrades,graphics/factions/tes_treasury_icon.png,304
+tes_treasury_exotics,Exotica Exotics,,"Every Exotica exotic chip in every form, 999 of each.",theeverythingshop.world.submarkets.TreasuryExotics,graphics/factions/tes_treasury_icon.png,303
+tes_treasury_upgrades,Exotica Upgrades,,"Every Exotica upgrade chip at every level, 999 of each.",theeverythingshop.world.submarkets.TreasuryUpgrades,graphics/factions/tes_treasury_icon.png,304
+tes_rl_consumables,Consumables,,"Every Exiled Sector schematic, terminus, survey, order and other consumable, 999 of each.",theeverythingshop.world.submarkets.RoguelikeConsumables,graphics/factions/tes_treasury_icon.png,310
+tes_rl_star_charts,Star Charts,,"Exiled Sector star charts of every tier, 999 of each.",theeverythingshop.world.submarkets.RoguelikeStarCharts,graphics/factions/tes_treasury_icon.png,311
+tes_rl_hull_items,Hull Items,,"Every Exiled Sector hull item and subroutine, newly rolled every month, 999 of each.",theeverythingshop.world.submarkets.RoguelikeHullItems,graphics/factions/tes_treasury_icon.png,312
+tes_rl_nanoswarms,Nanoswarms,,"Every Exiled Sector nanoswarm, nanoseed and Nanite Feedstock, 999 of each.",theeverythingshop.world.submarkets.RoguelikeNanoswarms,graphics/factions/tes_treasury_icon.png,313
+tes_rl_engrams,Engrams,,"Every Exiled Sector engram, 999 of each.",theeverythingshop.world.submarkets.RoguelikeEngrams,graphics/factions/tes_treasury_icon.png,314
+tes_rl_ciphers,Ciphers,,"Every Exiled Sector cipher, 999 of each.",theeverythingshop.world.submarkets.RoguelikeCiphers,graphics/factions/tes_treasury_icon.png,315

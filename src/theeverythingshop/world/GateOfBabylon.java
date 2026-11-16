@@ -16,6 +16,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
+import theeverythingshop.compat.ExiledSectorCompat;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
@@ -33,6 +34,50 @@ import static theeverythingshop.EverythingShopModPlugin.SYSTEM_NAME;
 public class GateOfBabylon {
     public static final float SYSTEM_ROTATION_PERIOD = 2000f;
     public static final String TREASURY_ID = "tes_treasury";
+    public static final String ROGUELIKE_ID = "tes_roguelike";
+    public static final float STATION_RADIUS = 2000f;
+    /** The Treasury circles the jump point, which sits in the middle of the nebula. */
+    public static final float TREASURY_RADIUS = 450f;
+
+    private static void createRoguelikeStation(StarSystemAPI system, SectorEntityToken center) {
+        createMallStation(system, center, ROGUELIKE_ID, "station_side04", "RogueLike Shop", 20f, STATION_RADIUS);
+    }
+
+    /**
+     * Brings a Gate of Babylon from an older version up to date: The Treasury moves next to the
+     * jump point, the RogueLike Shop is built when Exiled Sector is on, and no station keeps an
+     * open or black market. Safe to run on every load.
+     */
+    public static void updateExistingSystem() {
+        StarSystemAPI system = Global.getSector().getStarSystem(SYSTEM_NAME);
+        if (system == null || system.getCenter() == null) {
+            return;
+        }
+        SectorEntityToken center = system.getCenter();
+
+        SectorEntityToken treasury = system.getEntityById(TREASURY_ID);
+        if (treasury != null
+                && Misc.getDistance(treasury.getLocation(), center.getLocation()) > TREASURY_RADIUS * 2f) {
+            treasury.setCircularOrbitWithSpin(center, 0f, TREASURY_RADIUS, SYSTEM_ROTATION_PERIOD, 10f, 20f);
+        }
+
+        if (system.getEntityById(ROGUELIKE_ID) == null && ExiledSectorCompat.isAvailable()) {
+            createRoguelikeStation(system, center);
+        }
+
+        for (SectorEntityToken entity : system.getAllEntities()) {
+            MarketAPI market = entity.getMarket();
+            if (market == null || entity.getId() == null || !entity.getId().startsWith("tes_")) {
+                continue;
+            }
+            if (market.hasSubmarket(Submarkets.SUBMARKET_OPEN)) {
+                market.removeSubmarket(Submarkets.SUBMARKET_OPEN);
+            }
+            if (market.hasSubmarket(Submarkets.SUBMARKET_BLACK)) {
+                market.removeSubmarket(Submarkets.SUBMARKET_BLACK);
+            }
+        }
+    }
 
     public static void generateGreatMallSystem() {
         String name = SYSTEM_NAME;
@@ -93,10 +138,14 @@ public class GateOfBabylon {
 
         // Stations sit on a clean orbit ring clear of the dust band / magnetic field
         // (those are clustered around radius 1200), so the sprites are actually visible.
-        // Nine stations 40 degrees apart, and the Treasury between the first two.
-        float stationRadius = 2000f;
+        // Nine stations 40 degrees apart, the RogueLike Shop between the first two, and
+        // The Treasury in the middle, next to the jump point.
+        float stationRadius = STATION_RADIUS;
+        createMallStation(system, center, TREASURY_ID, "station_side05", "The Treasury", 0f, TREASURY_RADIUS);
         createMallStation(system, center, "tes_ai_store", "station_hightech3", "[REDACTED]", 0f, stationRadius);
-        createMallStation(system, center, TREASURY_ID, "station_side05", "The Treasury", 20f, stationRadius);
+        if (ExiledSectorCompat.isAvailable()) {
+            createRoguelikeStation(system, center);
+        }
         createMallStation(system, center, "tes_elite_store", "station_midline3", "Elite Vessels", 40f, stationRadius);
         createMallStation(system, center, "tes_general_store", "station_lowtech3", "General Trade", 80f, stationRadius);
         createMallStation(system, center, "tes_ai_ship_procurement", "station_hightech3", "AI Ship Procurement Station", 120f, stationRadius);
@@ -213,8 +262,7 @@ public class GateOfBabylon {
         market.addIndustry(Industries.SPACEPORT);
         market.addIndustry(Industries.PATROLHQ);
 
-        market.addSubmarket(Submarkets.SUBMARKET_OPEN);
-        market.addSubmarket(Submarkets.SUBMARKET_BLACK);
+        // No open or black market: the shops are the stations' own submarkets
         market.addSubmarket(Submarkets.SUBMARKET_STORAGE);
 
         market.setInvalidMissionTarget(true);

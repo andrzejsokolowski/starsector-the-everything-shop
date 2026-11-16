@@ -17,6 +17,6 @@ public class TreasuryUpgrades extends TreasuryExotics {
 
     @Override
     protected String getDisplayName() {
-        return "Upgrades";
+        return "Exotica\nUpgrades";
     }
 }

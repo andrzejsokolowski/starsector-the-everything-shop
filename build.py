@@ -22,11 +22,12 @@ JAR = os.path.join(ROOT, "jars", "TheEverythingShop.jar")
 SHIP = ["mod_info.json", "the_everything_shop.version", "icon.png", "data", "jars", "graphics"]
 
 CORE_JARS = ["starfarer.api.jar", "json.jar", "lwjgl.jar", "lwjgl_util.jar", "log4j-1.2.9.jar"]
-# Library mods, by folder name pattern. Exotica and Station Augments are compile-only: their classes are only
-# touched after the mod is found enabled (see theeverythingshop.compat.ExoticaCompat, StationAugmentsCompat).
+# Library mods, by folder name pattern. Exotica, Station Augments and Exiled Sector are compile-only: their
+# classes are only touched after the mod is found enabled (see theeverythingshop.compat.ExoticaCompat,
+# StationAugmentsCompat, ExiledSectorCompat).
 LIB_GLOBS = ["MagicLib*/jars/*.jar", "LazyLib*/jars/*.jar", "LunaLib*/jars/*.jar",
              "Nexerelin*/jars/ExerelinCore.jar", "Exotica Technologies*/jars/*.jar",
-             "Station Augments*/jars/niko_stationAugments.jar"]
+             "Station Augments*/jars/niko_stationAugments.jar", "Exiled Sector*/jars/*.jar"]
 
 
 def version():

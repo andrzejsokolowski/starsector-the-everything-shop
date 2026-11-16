@@ -117,7 +117,7 @@ public class ExtraStoreAICores extends BaseSubmarketPlugin {
     //==========================================================================
     @Override
     public String getName() {
-        return "AI Core Store" + "\n" + "'Christmas Store'";
+        return "AI\nCores";
     }
 
     @Override

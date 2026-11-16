@@ -29,14 +29,17 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
 - id `the_everything_shop`, Java package `theeverythingshop`, ids prefixed `tes_`. Build with
   `python build.py`: it compiles `jars/TheEverythingShop.jar` with `javac --release 17` against the
   game and the library mods in `D:\Games\StarSector0985\mods` (MagicLib, LazyLib, LunaLib, Nexerelin,
-  and Exotica Technologies as compile-only), then stages `TheEverythingShop/` and writes
+  and Exotica Technologies, Station Augments and Exiled Sector as compile-only), then stages `TheEverythingShop/` and writes
   `TheEverythingShop-<version>.zip` in the root. `--jar-only` stops after the jar.
 - Release metadata: `mod_info.json`, `the_everything_shop.version` (registered in
   `data/config/version/version_files.csv`), `changelog.txt`. GitHub repo
   `andrzejsokolowski/starsector-the-everything-shop`. Forum topic 36286
   (https://fractalsoftworks.com/forum/index.php?topic=36286), `modThreadId` in both metadata files.
-- The nebula and all ten stations (including The Treasury, `tes_treasury`) are only generated in
-  `onNewGameAfterProcGen`: changes to them need a new save.
+- The nebula and its stations are generated in `onNewGameAfterProcGen`. `GateOfBabylon.updateExistingSystem`
+  runs on every load and brings older saves up to date: The Treasury (`tes_treasury`) circles the jump
+  point in the middle, the RogueLike Shop (`tes_roguelike`) is built when Exiled Sector is on, and no
+  station keeps an open or black market. Other changes to the nebula need a new save.
+- The AI Cores shop (`tes_ai_cores`, `ExtraStoreAICores`) is a Treasury tab since 1.2.0 (it was on [REDACTED]).
 - Chicken (from Chicken's Tech Shop) was removed in 1.0.0; nothing of that mod is left. Treasury
   prices follow the player's standing with the Independents (`TreasuryShopBase.getTariff`).
 - The original stores (AI, Elite, General Trade) and the nebula generator started as Massacre's
@@ -44,6 +47,10 @@ small quota that runs out. The workspace `AGENTS.md` has the full routine.
 - Exotica Technologies is touched only by `theeverythingshop.compat.ExoticaBridge`, through
   `ExoticaCompat`, which catches `LinkageError` so a missing or different Exotica fork just closes
   the Exotica shops.
+- Exiled Sector is touched only by `ExiledSectorBridge` through `ExiledSectorCompat` (same pattern,
+  compile-only). Hull items, subroutines and star charts are rolled by Exiled Sector's own code
+  (`ItemData.rolled`), so it always recognises them; its other items are plain and sorted into the
+  RogueLike Shop's six tabs by id (`RoguelikeShopBase.kindOf`).
 - Station Augments is touched only by `StationAugmentsBridge` through `StationAugmentsCompat` (same
   pattern), to hide Station Augment blueprints the player already knows. Compile-only too.
 - Blueprints and Hullmod Specs sell one of each and remember what the player bought there

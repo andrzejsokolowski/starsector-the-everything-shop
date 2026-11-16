@@ -28,6 +28,6 @@ public class TreasuryExotics extends TreasuryShopBase {
 
     @Override
     protected String getDisplayName() {
-        return "Exotics";
+        return "Exotica\nExotics";
     }
 }

@@ -5,6 +5,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import theeverythingshop.compat.ExiledSectorCompat;
 import theeverythingshop.compat.ExoticaCompat;
 import theeverythingshop.world.GateOfBabylon;
 import theeverythingshop.world.submarkets.ExtraStoreAICores;
@@ -46,7 +47,7 @@ public class EverythingShopModPlugin extends BaseModPlugin implements LunaSettin
         register("tes_ai_store", "tes_redacted_roulette", "tes_enable_redacted_roulette", true);
         register("tes_ai_store", "tes_ai_derelict", "tes_enable_ai_derelict", true);
         register("tes_ai_store", "tes_ai_remnant", "tes_enable_ai_remnant", true);
-        register("tes_ai_store", "tes_ai_cores", "tes_enable_ai_cores", true);
+        register("tes_ai_store", "tes_ai_cores", "tes_enable_ai_cores", true, false); // moved to The Treasury
         register("tes_ai_store", "tes_ai_omega", "tes_enable_ai_omega", true);
 
         // --- Elite store ---
@@ -92,13 +93,24 @@ public class EverythingShopModPlugin extends BaseModPlugin implements LunaSettin
         register("tes_fighter_store", "tes_fighter_assault", "tes_enable_fighter_assault", true);
         register("tes_fighter_store", "tes_fighter_support", "tes_enable_fighter_support", true);
 
-        // --- The Treasury: special items, blueprints, modspecs and Exotica ---
+        // --- The Treasury: AI cores, special items, blueprints, modspecs and Exotica ---
+        register(GateOfBabylon.TREASURY_ID, "tes_ai_cores", "tes_enable_ai_cores", true);
         register(GateOfBabylon.TREASURY_ID, "tes_treasury_specials", "tes_enable_treasury_specials", true);
         register(GateOfBabylon.TREASURY_ID, "tes_treasury_blueprints", "tes_enable_treasury_blueprints", true);
         register(GateOfBabylon.TREASURY_ID, "tes_treasury_modspecs", "tes_enable_treasury_modspecs", true);
         boolean exotica = ExoticaCompat.isAvailable();
         register(GateOfBabylon.TREASURY_ID, "tes_treasury_exotics", "tes_enable_treasury_exotics", true, exotica);
         register(GateOfBabylon.TREASURY_ID, "tes_treasury_upgrades", "tes_enable_treasury_upgrades", true, exotica);
+
+        // --- RogueLike Shop: Exiled Sector items, one kind per shop ---
+        boolean exiled = ExiledSectorCompat.isAvailable();
+        String roguelike = GateOfBabylon.ROGUELIKE_ID;
+        register(roguelike, "tes_rl_consumables", "tes_enable_roguelike_shop", true, exiled);
+        register(roguelike, "tes_rl_star_charts", "tes_enable_roguelike_shop", true, exiled);
+        register(roguelike, "tes_rl_hull_items", "tes_enable_roguelike_shop", true, exiled);
+        register(roguelike, "tes_rl_nanoswarms", "tes_enable_roguelike_shop", true, exiled);
+        register(roguelike, "tes_rl_engrams", "tes_enable_roguelike_shop", true, exiled);
+        register(roguelike, "tes_rl_ciphers", "tes_enable_roguelike_shop", true, exiled);
     }
 
     @Override
@@ -115,6 +127,11 @@ public class EverythingShopModPlugin extends BaseModPlugin implements LunaSettin
 
     @Override
     public void onGameLoad(boolean newGame) {
+        try {
+            GateOfBabylon.updateExistingSystem();
+        } catch (Throwable t) {
+            Global.getLogger(EverythingShopModPlugin.class).error("Could not update the Gate of Babylon", t);
+        }
         marketsInitialSetup();
         // Apply enable/disable toggles live when the player changes them in the LunaLib menu.
         try {
@@ -129,7 +146,7 @@ public class EverythingShopModPlugin extends BaseModPlugin implements LunaSettin
     @Override
     public void beforeGameSave() {
         try {
-            for (String stationId : new String[] { GateOfBabylon.TREASURY_ID, "tes_ai_store" }) {
+            for (String stationId : new String[] { GateOfBabylon.TREASURY_ID, GateOfBabylon.ROGUELIKE_ID, "tes_ai_store" }) {
                 SectorEntityToken entity = Global.getSector().getEntityById(stationId);
                 if (entity == null || entity.getMarket() == null) continue;
                 for (SubmarketAPI submarket : entity.getMarket().getSubmarketsCopy()) {
